@@ -16,9 +16,9 @@ interface Props {
 
 export const TodoList: React.FC<Partial<Props>> = ({
   todos = [],
-  addTodo = () => { },
-  toggleTodo = () => { },
-  removeTodo = () => { }
+  addTodo = () => console.log(null),
+  toggleTodo = () => console.log(null),
+  removeTodo = () => console.log(null)
 }) => {
   const [inputValue, setInputValue] = useState('')
 

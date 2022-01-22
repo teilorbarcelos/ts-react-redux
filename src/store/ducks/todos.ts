@@ -18,19 +18,19 @@ export const { Types, Creators } = createActions({
 
 const INITIAL_STATE: TodoProps[] = []
 
-const add = (state = INITIAL_STATE, action: { text: string }) => [
+const add = (state = INITIAL_STATE, action: TodoProps) => [
   ...state,
   { id: Math.random(), text: action.text, complete: false }
 ]
 
-const toggle = (state = INITIAL_STATE, action: any) => state.map(
+const toggle = (state = INITIAL_STATE, action: TodoProps) => state.map(
   todo =>
     todo.id === action.id
       ? { ...todo, complete: !todo.complete }
       : todo
 )
 
-const remove = (state = INITIAL_STATE, action: any) =>
+const remove = (state = INITIAL_STATE, action: TodoProps) =>
   state.filter(todo => todo.id !== action.id)
 
 // Creating reducer \|/
